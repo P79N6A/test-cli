@@ -1,0 +1,520 @@
+input{
+    -webkit-appearance:none;
+    border-radius: 0;
+}
+.container{
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.row{
+    width: 100%;
+}
+.container::before,
+.container::after,
+.wrapper::before,
+.wrapper::after,
+.row::before,
+.row::after{
+    clear: both;
+    content: "";
+    display: table;
+}
+.block{
+    display: block;
+}
+/****common****/
+a{
+    color: #0a5ecc;
+    outline: none;
+}
+
+a:hover{
+    color: #0086ff;
+}
+
+
+/****ipo***/
+.gray01, 
+a.gray01 {
+    color: #a5a9af;
+}
+.ipo-mb-list-container,
+.ipo-mb{
+    display: none;
+}
+.ipo-container{
+    width: 827px;
+    float: right;
+}
+.ipo-title-container{
+    border-bottom: 1px solid #DDE2EB;
+}
+.ipo-title-container .ipo-title{
+    font-size: 24px;
+    color: #284058;
+    line-height: 24px;
+    padding: 32px 30px;
+    display: inline-block;
+}
+.ipo-title-container .pc-history{
+    float: right;
+    margin: 32px 30px;
+}
+.ipo-calendar-container{
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    padding: 0 30px;
+    display: none;
+}
+.ipo-calendar-container.show{
+    display: block;
+}
+.ipo-calendar-container .sm-title{
+    font-size: 16px;
+    color: #284058;
+    line-height: 16px;
+    padding: 24px 0;
+}
+.ipo-calendar-container .ipo-link{
+    display: inline-block;
+    word-break: keep-all;
+    cursor: pointer;
+    padding: 0 3px;
+}
+.ipo-margin-tips{
+    font-size: 10px;
+    color: #FF6400;
+    padding: 2px 4px;
+    border: 1px solid #FF6400;
+    display: inline-block;
+    line-height: 14px;
+    border-radius: 1px;
+    vertical-align: top;
+}
+/*PC股票列表表格开始*/
+/*公用样式*/
+.newStockStatusApply{
+    background:#FFC000;
+    border: 1px solid #FFC000!important;
+}
+.newStockStatusPublish{
+    background:#00AA3B;
+    border: 1px solid #00AA3B!important;
+}
+.newStockStatusIpo{
+    background:#0A5ECC;
+    border: 1px solid #0A5ECC!important;
+}
+.newStockListTable tr.tr-noHover:hover{
+    background: inherit;
+}
+.newStockListTable th,
+.newStockListTable td{
+    border:1px solid #dbdfeb;
+    min-width:0;
+}
+.newStockListTable th{
+    background: #F2F4F7;
+    padding-left:0;
+    padding-right:0;
+}
+.newStockListTable .alignLeft{
+    text-align:left;
+    padding-left:10px;
+}
+.newStockListTable td.alignRight{
+    text-align:right;
+    padding-right:10px;
+}
+/*切换周期的按钮*/
+.newStockListTable .newStockSwitchPeriod{
+    cursor: pointer;
+    width: 20px;
+}
+.newStockListTable .newStockSwitchPeriod:hover{
+    background: #f0f4fb;
+}
+
+.newStockListTable .newStockDownloadLink .fileicon{
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAABGdBTUEAALGPC/xhBQAAAd9JREFUWAntmLFOwzAQhm2r6sAGA1InHqBvwUiFKEhdOxbWItFuCLGFSnSlKyMMgICODLxDH4CFSgwwwVBaG19QKmPH4ZKYRki2lNR3tu9+f0muSgjxLR8Bqi9vHF2Up+OnYyF4UxBS0ccz2ZS8EUJvy0ul9mV//zVNDKZPBnFc8K4zcZBAkGUiRHPy/vm4vddb1XMm2QbBeit4DsVRWrsZdIZJizFjW61AhgvbSJ6r8hgxxtavzg5evt3JZ4NgRM6FODU1iAJx8qhyzh+wJA2BalCXfSCWReTCBMJms4hcqMAsIhcuMK3IQgTaRDbapyswprbCBIII/Z6cfEz7qjjol3SHza7vntwLITZs4+CnlA6vB51a3BylHv4YliVHscWmYoRdpwTlBqKiPM8DoufGbx34x9EamqCNjBbPMLHrbISdEjTUOXB4gXkheoJ5CaKfYkwdxIpJqpd6jEIucVy91IVFNpogtp5FgV39FkIwjXgvMA2tuLmeYByVND70U+zroAUrmqCvgxaC/im2gEG7PUE0KsvE/0dQftEcw2Z2Wr3YF3DLRnO5o1xRbjWYUQcpZefy+3R3RvidfFdV5/5ZX+YKY0NuPYlxiUuVtUNGWRC3G32xKxtyQU7Ircf8AqSNtJACt4k5AAAAAElFTkSuQmCC);
+    background-repeat: no-repeat;
+    background-size: 20px 20px;
+    display: block;
+    margin:0 auto;
+    width:20px;
+    height:20px;
+}
+.newStockListTable .newStockDownloadLink:hover{
+    text-decoration: none;
+}
+/*PC股票列表表格结束*/
+
+/*PC图例开始*/
+.newStockListIllustrations{
+    text-align: right;
+}
+.newStockListIllustrations .illustrationsWrapper{
+    margin-right:20px;
+    display: inline-block;
+    height: 44px;
+    line-height: 44px;
+}
+.newStockListIllustrations .illustrationsIcon{
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    vertical-align: middle;
+}
+.newStockListIllustrations .illustrationsWrapper span{
+    vertical-align: middle;
+}
+/*PC图例结束*/
+.ipo-tips-container{
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    padding: 28px 30px;
+    line-height: 2em;
+}
+/*mobile股票列表开始*/
+.ipo-mb-list-container .newStockItem{
+    margin-top:14px;
+    padding-top:0;
+    padding-bottom:0;
+}
+.ipo-mb-list-container .newStockItem .newStockHeader{
+    color:#284058;
+}
+.ipo-mb-list-container .newStockItem .newStockHeader a{
+    font-size:14px;
+    color:#52668C;
+}
+.ipo-mb-list-container .newStockItem .newStockBodyItem{
+    height:32px;
+    line-height:32px;
+}
+.ipo-mb-list-container .newStockItem .newStockBodyItem label{
+    display: inline-block;
+    width: 100px;
+    color: #808F9E;
+}
+.ipo-mb-list-container .newStockItem .newStockFooter{
+    border-top: 1px solid #DDE2EB;
+    text-align: right;
+    padding: 8px 14px;
+    margin-left: 14px;
+}
+.ipo-mb-list-container .newStockItem .newStockFooter a{
+    margin-left: 5px;
+}
+/*历史记录列表页开始*/
+.ipo-mb-list-container .newStockItem{
+    padding:0;
+}
+.ipo-mb-list-container .newStockItem .newStockHeader{
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    font-size: 14px;
+    padding: 0 14px;
+}
+.ipo-mb-i-header{
+    padding: 14px 0;
+    position: relative;
+    padding-right: 66px;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    line-height: 20px;
+}
+.ipo-mb-i-header .title-link{
+    line-height: 20px;
+    display: inline-block;
+    vertical-align: middle;
+}
+.ipo-mb-i-header .download{
+    position: absolute;
+    right: 0;
+    top: 14px;
+}
+.ipo-mb-i-header .download i{
+    vertical-align: bottom;
+    display: inline-block;
+    height: 20px;
+    margin-left: -2px;
+    padding-top: 2px;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+}
+.ipo-mb-list-container .newStockItem .newStockBody{
+    padding: 0px 14px 10px 14px;
+}
+.ipo-mb-list-container .newStockNoHistory{
+    margin: 50px 0;
+    text-align:center;
+}
+/*mobile股票列表结束*/
+.empty-container{
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    text-align: center;
+    padding: 28px 0;
+}
+.empty{
+    width: 100%;
+    height: 120px;
+    position: relative;
+    text-align: center;
+}
+.empty .empty-box{
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: 100px;
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIwAAACMBAMAAABc7lwNAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAeUExURUxpcefs7+rt8ebr7uju8N3l6u3w8tPb4Nzi6Obr7g8O7QQAAAAFdFJOUwC+QoQfnj82DAAAAYBJREFUaN7t2T1PwzAQBuB+CYkNsXWDkY2Fga1LB0YkIsLGQkV+AA3dGAgNG7SKyf1b6kIi2Wcn9SkCId53iKpafnL2OR3SXg9BEARBEARpST8KyOXEx5xlIc6zRxk1zmK3WHuYYaFH46i5pnqcPKu6KELWFNGBmxkX5l15HSazcioDKnbak5op3e3+ZrKWflXjRKcu5tyuJvPMr6qhKxfzyhaVufeoZt5d7SYK6lRMREecmQYym2pcLR8Lqlk72k1UNuwEPzubCcWEt5tazo3VKF0Nb/nJVzUB5Whmxdst2BvW8qH+sszzXN8ty6vE28/mtRrXM+yWTytm92yZJ/tJEDA3dstHJKzG/O3qNzNLP2Mc5L2ZNLdgwPwDplymRnIlYe5SOwsJ88GYVAkYrqQv3TDzcCZxMItumPmvLWp23U2n7pnyIDvFlvKohM+UoiRR9QU/FGDAgAEDBgwYMGDA/D1mX8y8GS+lxIzxUmogZswXf8dKhCSH+K8IQZAfzidy1BWmGyoV5gAAAABJRU5ErkJggg==);
+}
+.empty .empty-txt{
+    display: inline-block;
+    width: 100%;
+    font-size: 16px;
+}
+.ipo-loading-container{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 9999;
+    margin-left: -60px;
+    margin-top: -60px;
+}
+
+@media screen and (max-device-width: 768px) {
+    body {
+        min-width: 320px;
+        -webkit-text-size-adjust : none;
+        -moz-text-size-adjust : none;
+        -ms-text-size-adjust : none;
+        text-size-adjust : none;
+    }
+
+    .ipo-container{
+        width: 100%;
+    }
+    .ipo-title-container,
+    .ipo-calendar-container{
+        display: none!important;
+    }
+    .ipo-tips-container{
+        padding: 14px;
+    }
+    .ipo-mb-list-container.show,
+    .ipo-mb{
+        display: block;
+    }
+    .ipo-mb{
+        background: #fff;
+    }
+    .ipo-mb-list-container{
+        -webkit-box-sizing: border-box;
+                box-sizing: border-box;
+        margin-bottom: 14px;
+    }
+    .ipo-mb-list-container .newStockItem{
+        background: #fff;
+        border-top: 1px solid #DDE2EB;
+        border-bottom: 1px solid #DDE2EB;
+    }
+    .admission{
+        color: #FF6400;
+    }
+    .ipo-loading-container{
+        border-bottom: 1px solid #DDE2EB;
+        border-top: 1px solid #DDE2EB;
+    }
+    .empty{
+        height: 90px;
+    }
+    .empty .empty-box{
+        width: 70px;
+        height: 70px;
+        background-size: 70px;
+    }
+    .empty .empty-txt{
+        font-size: 14px;
+    }
+    .newStockListIllustrations{
+        display: none;
+    }
+}
+.footer-container .footer-mb {
+    display: none;
+    padding: 20px 0;
+}
+.footer-container .footer-mb .contact {
+    text-align: center;
+}
+.footer-container .footer-mb .copyright {
+    color: #B0BDC7;
+    font-size: 12px;
+    text-align: center;
+}
+@media screen and (max-device-width: 768px) {
+    .footer-container .footer-pc {
+        display: none;
+    }
+    .footer-container .footer-mb {
+        display: block;
+    }
+    /**us 样式修正 **/
+    .ipo-mb-list-container .newStockItem  {
+        color: #284058;
+        font-family: PingFang-SC-Regular;
+        /* margin-top: 0px; */
+    }
+}
+
+/*适应iphoneX*/
+@media only screen and (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) {
+    html,
+    body {
+        height: auto;
+    }
+    .ipo-mb-list-container {
+        margin-bottom: 0;
+    }
+}
+
+/*****************英文翻译部分样式*******************/
+
+.en-us{
+    @media screen and (max-device-width: 768px) {
+        /**us版本修正样式**/
+        /*顶部空隙三等分*/
+        .ui-tab ul li {
+            -webkit-box-flex: 1 !important;
+                -ms-flex: auto 0 !important;
+                    flex: auto 0 !important;
+        }
+        .ui-tab ul{
+            display: -webkit-box !important;
+            display: -ms-flexbox !important;
+            display: flex !important;
+        }
+        .ui-tab ul .divider{
+            -webkit-box-flex: 1 !important;
+                -ms-flex: 1 !important;
+                    flex: 1 !important;
+        }
+        /*通用卡片样式开始*/
+        .us-card .us-card-header{
+            padding: 0px 14px !important;
+            line-height: initial !important;
+        }
+        .us-card .us-card-header .us-header-detail{
+            font-family: PingFang-SC-Regular;
+            font-size:16px;
+            color: #284058;
+            line-height: 24px;
+        }
+        .us-card .us-card-header .us-header-tip{
+            display: block !important;
+        }
+        .us-card .us-card-header .us-header-more{
+            float: none !important;
+            display: inline-block !important;
+        }
+        .us-card .us-card-body .us-card-item{
+            height: initial !important;
+            line-height: initial !important;
+            padding: 12px 0px;
+        }
+        .us-card .us-card-body .us-card-item .us-card-title{
+            width: auto;
+            display: block;
+            font-size: 14px;
+            color: #8094A8;
+            display: inline-block;
+            line-height: 14px;
+            vertical-align: top;
+            font-weight: normal;
+            word-break: keep-all;
+            word-wrap: break-word;
+        }
+        .us-card .us-card-body .us-card-item .us-card-detail{
+            display: block;
+            color: #284058;
+            font-size: 14px;
+            line-height: 14px;
+            min-height: 14px;
+            margin-top: 2px;
+        }
+        /*通用卡片样式结束*/
+        .us-ipo-tips {
+            font-family: PingFang-SC-Regular;
+            font-size: 14px;
+            color: #8094A8;
+            line-height: 22px;
+        }
+        .us-ipo-tips p:first-child{
+            color: #284058;
+        }
+        .us-card .newStockHeader {
+            padding: 0px;
+        }
+        /*卡片样式修正开始*/
+        .us-card  .ipo-mb-i-header {
+            position: relative;
+            padding: 0px;
+        }
+        .us-card .newStockHeader {
+            padding-top: 12px;
+        }
+        .us-card .newStockHeader .title-link {
+            display: inline-block;
+            line-height: 24px;
+            font-size: 16px;
+        }
+        .us-card .download {
+            line-height: 14px;
+            display: block;
+            position: static;
+            padding: 9px 0px 16px;
+        }
+        .us-card .download i{
+            width: 12px;
+            height: 14px;
+            line-height: 14px !important;
+            padding: 0px;
+        }
+        /*卡片样式修正结束*/
+
+        .ipo-mb-list-container{
+            margin-top: -14px;
+        }
+    }
+}
+
+/**********对全局样式的修正************/
+@media screen and (max-device-width: 768px) {
+    .ipo-list-wapper {
+        background: #ECEFF5;
+    }
+
+    .footer-wrapper .footer-mb-wrapper{
+        background: white;
+    }
+
+    .ipo-tips-container {
+        background: white;
+    }
+    .en-us .footer-wrapper .footer-mb-wrapper{
+        background: #051359;
+    }
+
+    .zh-hk .footer-wrapper .footer-mb-wrapper{
+        background-color: #333;
+    }
+
+}

@@ -1,0 +1,55 @@
+$FOOTER_CN_MB_APPLY_HEIGHT:150px;
+$FOOTER_CN_MB_INFORMATION_HEIGHT:185px;
+
+$FOOTER_HK_MB_APPLY_HEIGHT:115px;
+$FOOTER_HK_MB_INFORMATION_HEIGHT:150px;
+
+$FOOTER_EN_MB_APPLY_HEIGHT:200px;
+$FOOTER_EN_MB_INFORMATION_HEIGHT:235px;
+
+$MEDIA_WIDTH:768px;
+
+@media screen and (max-device-width:$MEDIA_WIDTH){
+    .content-wrapper{
+        &.apply{
+            padding-bottom: $FOOTER_CN_MB_APPLY_HEIGHT;
+            .ipo-footer-wrapper{
+                height: $FOOTER_CN_MB_APPLY_HEIGHT;
+            }
+        }
+        &.information{
+            padding-bottom: $FOOTER_CN_MB_INFORMATION_HEIGHT;
+            .ipo-footer-wrapper{
+                height: $FOOTER_CN_MB_INFORMATION_HEIGHT;
+            }
+        }
+    }
+    .content-wrapper.zh-hk{
+        &.apply{
+            padding-bottom: $FOOTER_HK_MB_APPLY_HEIGHT;
+            .ipo-footer-wrapper{
+                height: $FOOTER_HK_MB_APPLY_HEIGHT;
+            }
+        }
+        &.information{
+            padding-bottom: $FOOTER_HK_MB_INFORMATION_HEIGHT;
+            .ipo-footer-wrapper{
+                height: $FOOTER_HK_MB_INFORMATION_HEIGHT;
+            }
+        }
+    }
+    .content-wrapper.en-us{
+        &.apply{
+            padding-bottom: $FOOTER_EN_MB_APPLY_HEIGHT;
+            .ipo-footer-wrapper{
+                height: $FOOTER_EN_MB_APPLY_HEIGHT;
+            }
+        }
+        &.information{
+            padding-bottom: $FOOTER_EN_MB_INFORMATION_HEIGHT;
+            .ipo-footer-wrapper{
+                height: $FOOTER_EN_MB_INFORMATION_HEIGHT;
+            }
+        }
+    }
+}

@@ -1,0 +1,13 @@
+{
+    "appId":"10000538",
+    "secretId":"AKIDCWnSvqbxP93kyXunye3MauIQjvjx2tYD",
+    "secretKey":"1JGhOfG3GjZqkFXbSx18Ls5p9sPwq03e",
+    "expired":1800,
+    "bucket":"webstaticresource",
+    "remotePath":"/futu5/ipo/",
+    "localPath":"./static",
+    "cacheMaxAge":31536000,
+    "mime":{
+        "default": true
+    }
+}

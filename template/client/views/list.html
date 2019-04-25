@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <%-render.meta%>
+    <title><%=__('新股认购列表')%></title>
+    <%-render.css%>
+    <!-- inject:css -->
+    <script src="//dedog-report.futunn.com/tool-dedog.js?monitorId=504084&cmd=154&subCmd=100"></script>
+</head>
+<body>
+    <%if (!hideHeader) {%>
+    <div class="ipo-header-wrapper">
+        <%-render.header%>
+    </div>
+    <%}%>
+    <div class="content-wrapper<%if(lang === 1){%> zh-hk<%}else if(lang === 2){%> en-us<%}%><%if (hideHeader) {%> pdt-0<%}%>">
+        <%-render.banner%>
+        <div class="main-wrapper">
+            <div class="ipo-sidebar-wrapper">
+                <%-render.sidebar%>
+            </div>
+            <div class="center-wrapper">  
+                <!--pc端顶部-->
+                <p class="row ipo-title-container">
+                    <span class="ipo-title"><%=__('新股认购')%></span>
+                    <a class="pc-history" href="//<%=domain.futu5.IPO_FUTU5%>/history"><%=__('认购记录')%></a>
+                </p> 
+                <!--移动端顶部-->
+                <div class="ui-tab ipo-mb row">
+                    <ul class="ui-tab-nav">
+                        <%if(lang === 2){%><li class="divider"></li><%}%>
+                        <li class="ui-active">
+                            <a href="//<%=domain.futu5.IPO_FUTU5%>/list" class="ui-tab-nav-link">
+                                <span class="inner"><%=__('新股明细')%></span>
+                            </a>
+                        </li>
+                        <%if(lang === 2){%><li class="divider"></li><%}%>
+                        <li>
+                            <a href="//<%=domain.futu5.IPO_FUTU5%>/history" class="ui-tab-nav-link">
+                                <span class="inner"><%=__('认购记录')%></span>
+                            </a>
+                        </li>
+                        <%if(lang === 2){%><li class="divider"></li><%}%>
+                    </ul>
+                </div>  
+                <div id="listApp">
+                    <div class="loading" style="top:30%">
+                        <div class="ui-toast ui-toast-status">
+                            <div class="ui-toast-wrapper">
+                                <i class="iconLoading"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ipo-footer-wrapper">
+            <div class="ipo-footer-container">
+                <%-render.footer%>
+            </div>
+        </div>
+    </div>
+    <%-render.js%>
+    <script>
+        _params.domain = {
+            myFutu5: '<%=domain.futu5.MY_FUTU5%>' || 'my.futu5.com',
+            ipoFutu5: '<%=domain.futu5.IPO_FUTU5%>' || 'ipo.futu5.com',
+            helpFutu5: '<%=domain.futu5.HELP_FUTU5%>' || 'help.futu5.com',
+            wwwFutu5: '<%=domain.futu5.WWW_FUTU5%>' || 'www.futu5.com',
+            wwwFutunn: '<%=domain.futunn.WWW_FUTUNN%>' || 'www.futunn.com'
+        }
+    </script>
+    <!-- inject:js -->
+</body>
+</html>

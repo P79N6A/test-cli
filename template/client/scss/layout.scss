@@ -1,0 +1,186 @@
+$HEADER_CN_PC_HEIGHT:70px;
+$HEADER_CN_MB_HEIGHT:44px;
+$FOOTER_CN_PC_HEIGHT:406px;
+$FOOTER_CN_MB_HEIGHT:80px;
+
+$HEADER_HK_PC_HEIGHT:128px;
+$HEADER_HK_MB_HEIGHT:50px;
+$FOOTER_HK_PC_HEIGHT:282px;
+$FOOTER_HK_MB_HEIGHT:45px;
+
+$HEADER_EN_PC_HEIGHT:70px;
+$HEADER_EN_MB_HEIGHT:56px;
+$FOOTER_EN_PC_HEIGHT:240px;
+$FOOTER_EN_MB_HEIGHT:130px;
+
+$CONTAINER_WIDTH:1000px;
+$MEDIA_WIDTH:768px;
+$SIDEBAR_WIDTH:170px;
+
+html,body{
+    height: 100%;
+}
+body {
+    font: 14px/1.5 "Microsoft Yahei","ff-tisa-web-pro-1","ff-tisa-web-pro-2","Lucida Grande","Hiragino Sans GB",Tahoma,HELVETICA,Arial,sans-serif;
+    font-style: normal;
+    font-variant-ligatures: normal;
+    font-variant-caps: normal;
+    font-variant-numeric: normal;
+    font-variant-east-asian: normal;
+    font-stretch: normal;
+    -webkit-font-smoothing: antialiased;
+    margin: 0;
+}
+button{
+    margin: 0;
+    padding: 0;
+}
+.ipo-header-wrapper{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    box-shadow: 0px 1px 1px #bbb;
+    &::before,
+    &::after{
+        clear: both;    
+        display: table;
+        content: "";
+    }
+}
+.ui-notice .ui-notice-icon{
+    vertical-align: baseline!important;
+}
+.content-wrapper{
+    width: 100%;
+    position: relative;
+    min-height: 100%;
+    box-sizing: border-box;
+    padding-top: $HEADER_CN_PC_HEIGHT;
+    padding-bottom: $FOOTER_CN_PC_HEIGHT;
+    background: #ECEFF5;
+    &.zh-hk{
+        padding-top: $HEADER_HK_PC_HEIGHT;
+        padding-bottom: $FOOTER_HK_PC_HEIGHT;
+        .ipo-footer-wrapper{
+            height: $FOOTER_HK_PC_HEIGHT;
+        }
+    }
+    &.en-us{
+        padding-top: $HEADER_EN_PC_HEIGHT;
+        padding-bottom: $FOOTER_EN_PC_HEIGHT;
+        .ipo-footer-wrapper{
+            height: $FOOTER_EN_PC_HEIGHT;
+        }
+    }
+    &.pdt-0{
+        padding-top: 0;
+    }
+    .main-wrapper{
+        width: $CONTAINER_WIDTH;
+        margin: 20px auto;    
+        box-sizing: border-box;
+        border: 1px solid #dde2eb;
+        background: url(data:img/jpg;base64,iVBORw0KGgoAAAANSUhEUgAAAKsAAAABCAYAAAChb16RAAAAGElEQVQokWP88OX7f4ZRMAoGOXj77gsDAFLvBquDbt2bAAAAAElFTkSuQmCC) repeat-y 0 0 #fff;
+        &::before,
+        &::after{
+            clear: both;    
+            display: table;
+            content: "";
+        }
+        .ipo-sidebar-wrapper{
+            width: $SIDEBAR_WIDTH;
+            box-sizing: border-box;
+            float: left; 
+        }
+        .center-wrapper{
+            width: #{$CONTAINER_WIDTH - $SIDEBAR_WIDTH - 3px};
+            box-sizing: border-box;
+            float: right;
+            background: #fff;
+        }
+    }
+    .ipo-footer-wrapper{
+        width: 100%;
+        height: $FOOTER_CN_PC_HEIGHT;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        &::before,
+        &::after{
+            clear: both;    
+            display: table;
+            content: "";
+        }
+        .ipo-footer-container{
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+    }
+    &::before,
+    &::after{
+        clear: both;    
+        display: table;
+        content: "";
+    }
+}
+.consult-service-wrapper{
+    height: 0!important;
+    width: 0!important;
+}
+
+@media screen and (max-device-width:$MEDIA_WIDTH){
+    body{
+        background: #fff;
+        font-family: PingFang-SC-Regular;
+    }
+    
+    .header-wrapper {
+        .header-pc-wrapper{
+            display: none;
+        }
+        .header-mb-wrapper{
+            display: block;
+        }
+    }
+    .content-wrapper{
+        background: #fff;
+        width: 100%;
+        padding-top: $HEADER_CN_MB_HEIGHT;
+        padding-bottom: $FOOTER_CN_MB_HEIGHT;
+        .ipo-footer-wrapper{
+            height: $FOOTER_CN_MB_HEIGHT;
+        }
+        &.zh-hk{
+            padding-top: $HEADER_HK_MB_HEIGHT;
+            padding-bottom: $FOOTER_HK_MB_HEIGHT;
+            .ipo-footer-wrapper{
+                height: $FOOTER_HK_MB_HEIGHT;
+            }
+        }
+        &.en-us{
+            padding-top: $HEADER_EN_MB_HEIGHT;
+            padding-bottom: $FOOTER_EN_MB_HEIGHT;
+            .ipo-footer-wrapper{
+                height: $FOOTER_EN_MB_HEIGHT;
+            }
+        }
+        &.pdt-0{
+            padding-top: 0;
+        }
+        .main-wrapper{
+            width: 100%;
+            border: none;
+            background: #fff;
+            margin: 0;
+            .ipo-sidebar-wrapper{
+                display: none;
+            }
+            .center-wrapper{
+                width: 100%;
+            }
+        }
+    }
+}

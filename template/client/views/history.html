@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <%-render.meta%>
+    <title><%=__('新股认购历史记录')%></title>
+    <%-render.css%>
+    <!-- inject:css -->
+    <script src="//dedog-report.futunn.com/tool-dedog.js?monitorId=504084&cmd=154&subCmd=100"></script>
+</head>
+<body>
+    <%if (!hideHeader) {%>
+    <div class="ipo-header-wrapper">
+        <%-render.header%>
+    </div>
+    <%}%>
+    <div class="content-wrapper<%if(lang === 1){%> zh-hk<%}else if(lang === 2){%> en-us<%}%><%if (hideHeader) {%> pdt-0<%}%>">
+        <%-render.banner%>
+        <div class="main-wrapper">
+            <div class="ipo-sidebar-wrapper">
+                <%-render.sidebar%>
+            </div>
+            <div class="center-wrapper">
+                <p class="ui-title pc-title-wrapper"><span class="ui-title-font"><%=__('股票服务记录')%></span></p>
+                <div class="ui-tab pc-title-wrapper">
+                    <ul class="ui-tab-nav">
+                        <li class="ui-active">
+                            <a href="//<%=domain.futu5.IPO_FUTU5%>/history" class="ui-tab-nav-link">
+                                <span class="inner"><%=__('新股认购')%></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="//<%=domain.futu5.MY_FUTU5%>/account/stocklist?side=in" class="ui-tab-nav-link">
+                                <span class="inner"><%=__('转入股票')%></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="//<%=domain.futu5.MY_FUTU5%>/account/stocklist?side=out" class="ui-tab-nav-link">
+                                <span class="inner"><%=__('转出股票')%></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="//<%=domain.futu5.MY_FUTU5%>/account/equityRightHistory" class="ui-tab-nav-link">
+                                <span class="inner"><%=__('申请供股')%></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="//<%=domain.futu5.MY_FUTU5%>/account/stockInterestHistory" class="ui-tab-nav-link">
+                                <span class="inner"><%=__('选股选息')%></span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="ui-tab mb-title-wrapper">
+                    <ul class="ui-tab-nav">
+                        <li>
+                            <a href="//<%=domain.futu5.MY_FUTU5%>/ipo/list" class="ui-tab-nav-link">
+                                <span class="inner"><%=__('新股认购')%></span>
+                            </a>
+                        </li>
+                        <li class="ui-active">
+                            <a href="//<%=domain.futu5.IPO_FUTU5%>/history" class="ui-tab-nav-link">
+                                <span class="inner"><%=__('认购记录')%></span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>      
+                <div id="historyApp">
+                    <div class="loading" style="top:30%">
+                        <div class="ui-toast ui-toast-status">
+                            <div class="ui-toast-wrapper">
+                                <i class="iconLoading"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ipo-footer-wrapper">
+            <div class="ipo-footer-container">
+                <%-render.footer%>
+            </div>
+        </div>
+    </div>
+    <%-render.js%>
+    <script>
+        _params.myFutu5 = '<%=domain.futu5.MY_FUTU5%>';
+        _params.ipoFutu5 = '<%=domain.futu5.IPO_FUTU5%>';
+    </script>
+    <!-- inject:js -->
+</body>
+</html>

@@ -1,0 +1,104 @@
+{
+  "name": "{{ name }}",
+  "version": "{{ version}}",
+  "description": "{{ description }}",
+  "author": "{{ author }}",
+  "license": "{{ license }}",
+  "main": "index.js",
+  "dependencies": {
+    "@futu/node-cmlb": "^3.0.1",
+    "@futu/node-uls": "^3.0.0",
+    "@futu/render": "^1.2.0",
+    "@futu/srpc": "^1.0.0",
+    "@futu/verification-ticket": "^1.1.0",
+    "@futu/trade-password": "^1.0.1",
+    "acorn": "^6.0.4",
+    "ejs": "^2.6.1",
+    "ioredis": "^4.0.0",
+    "ipip-datx": "^0.2.2",
+    "koa": "^2.5.2",
+    "koa-body": "^4.0.4",
+    "koa-i18n": "^2.1.0",
+    "koa-json": "^2.0.2",
+    "koa-locale": "^1.3.0",
+    "koa-logger": "^3.2.0",
+    "koa-onerror": "^4.1.0",
+    "koa-router": "^7.4.0",
+    "koa-session": "^5.9.0",
+    "koa-static": "^5.0.0",
+    "request": "^2.88.0",
+    "request-promise-native": "^1.0.5"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.0.0",
+    "@babel/plugin-transform-runtime": "^7.0.0",
+    "@babel/polyfill": "^7.0.0",
+    "@babel/preset-env": "^7.2.0",
+    "@babel/runtime": "^7.2.0",
+    {{#cssUi}}
+    "@futuweb/css-ui": "^1.7.7",
+    {{/cssUi}}
+    {{#xhr}}
+    "@futuweb/tool-xhr2": "^2.1.0",
+    {{/xhr}}
+    "@kazupon/vue-i18n-loader": "^0.3.0",
+    {{#postcssLoader}}
+    "postcss-loader": "^3.0.0",
+    {{/postcssLoader}}
+    {{#autoprefix}}
+    "autoprefixer": "^9.1.5",
+    {{/autoprefix}}
+    "babel-loader": "^8.0.2",
+    "chokidar": "^2.0.4",
+    "clean-webpack-plugin": "^0.1.19",
+    "cossync": "^1.4.2",
+    "crypto-js": "^3.1.9-1",
+    "css-loader": "^1.0.0",
+    "eslint": "^5.9.0",
+    "eslint-config-futu": "^1.0.3",
+    "html-inject-plugin": "^1.0.6",
+    "html-loader": "^0.5.5",
+    "mini-css-extract-plugin": "^0.4.2",
+    {{#sass}}
+    "node-sass": "^4.9.3",
+    "sass-loader": "^7.1.0",
+    {{/sass}}
+    "npm-run-all": "^4.1.5",
+    "optimize-css-assets-webpack-plugin": "^5.0.1",
+    "style-loader": "^0.23.1",
+    "uglifyjs-webpack-plugin": "^2.0.1",
+    "url-loader": "^1.1.1",
+    "vue": "^2.5.21",
+    "vue-i18n": "^8.5.0",
+    "vue-loader": "^15.4.2",
+    "vue-router": "^3.0.2",
+    "vue-style-loader": "^4.1.2",
+    "vue-template-compiler": "^2.5.21",
+    "vuex": "^3.0.1",
+    "webpack": "^4.17.2",
+    "webpack-cli": "^3.1.0"
+  },
+  "scripts": {
+    "webpack": "webpack",
+    "develop": "NODE_ENV=development node server/watcher.js",
+    "dev": "run-p develop webpack",
+    "release:develop": "pm2 startOrGracefulReload pm2.develop.config.js && pm2 save",
+    "release:test": "pm2 startOrGracefulReload pm2.test.config.js && pm2 save",
+    "release:prod": "pm2 startOrGracefulReload pm2.prod.config.js && pm2 save"
+  },
+  {{#autoprefix}}
+  "browserslist": [
+    "IE >= 9",
+    "iOS >= 8",
+    "Firefox >= 20",
+    "Android >= 4.3"
+  ],
+  {{/autoprefix}}
+  "repository": {
+    "type": "git",
+    "url": "git@gitlab.futunn.com:node_web/futu5_ipo.git"
+  },
+  "keywords": [
+    "ipo"
+  ]
+}

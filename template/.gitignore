@@ -1,0 +1,5 @@
+node_modules
+static/dist
+server/views
+npm-debug.log
+.vscode

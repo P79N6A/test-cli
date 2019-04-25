@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <%-render.meta%>
+    <title><%=__('futu5_ipo')%></title>
+    <%-render.css%>
+    <!-- inject:css -->
+    <script src="//dedog-report.futunn.com/tool-dedog.js?monitorId=504084&cmd=154&subCmd=100"></script>
+</head>
+<body>
+    <%if (!hideHeader) {%>
+    <div class="ipo-header-wrapper">
+        <%-render.header%>
+    </div>
+    <%}%>
+    <div class="content-wrapper<%if(lang === 1){%> zh-hk<%}else if(lang === 2){%> en-us<%}%><%if (hideHeader) {%> pdt-0<%}%>">
+        <%-render.banner%>
+        <div class="main-wrapper">
+            <div class="ipo-sidebar-wrapper">
+                <%-render.sidebar%>
+            </div>
+            <div class="center-wrapper">
+                <p class="ui-title pc-title-wrapper"><span class="ui-title-font"><%=__('futu5_ipo')%></span></p>
+                <div id="detailApp">
+                    <div class="loading" style="top:30%">
+                        <div class="ui-toast ui-toast-status">
+                            <div class="ui-toast-wrapper">
+                                <i class="iconLoading"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ipo-footer-wrapper">
+            <div class="ipo-footer-container">
+                <%-render.footer%>
+            </div>
+        </div>
+    </div>
+    <%-render.js%>
+    <script>
+        _params.myFutu5 = '<%=domain.futu5.MY_FUTU5%>';
+    </script>
+    <!-- inject:js -->
+</body>
+</html>
